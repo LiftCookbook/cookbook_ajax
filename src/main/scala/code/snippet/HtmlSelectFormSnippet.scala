@@ -2,12 +2,13 @@ package code.snippet
 
 import net.liftweb.common.Empty
 import net.liftweb.util.Helpers._
-import net.liftweb.http.SHtml.ajaxSelect
+import net.liftweb.http.SHtml._
 import net.liftweb.http.js.JsCmd
 import net.liftweb.http.js.JsCmds.SetHtml
 import xml.Text
+import net.liftweb.http.S
 
-class HtmlSelectSnippet {
+class HtmlSelectFormSnippet {
 
   type Planet = String
   type LightYears = Double
@@ -34,7 +35,12 @@ class HtmlSelectSnippet {
       SetHtml("distance", Text(database(selected) + " light years"))
     }
 
-    "select" #> ajaxSelect(options, default, handler)
+    var selectedValue : String = ""
+
+    "select" #> onEvents("onchange")(handler) {
+        select(options, default, selectedValue = _)
+     } &
+    "type=submit" #> onSubmitUnit( () => S.notice("Destination "+selectedValue))
 
   }
 }
