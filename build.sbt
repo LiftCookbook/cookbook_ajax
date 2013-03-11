@@ -1,4 +1,4 @@
-name := "Cookbook Ajax/JS/Comet"
+name := "Cookbook AjaxJavaScriptComet"
 
 version := "1.0.0"
 

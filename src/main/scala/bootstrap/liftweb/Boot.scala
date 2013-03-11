@@ -24,6 +24,7 @@ class Boot {
       Menu.i("Home") / "index", // the simple way to declare a menu
 
       Menu.i("Html Select") / "htmlselect",
+      Menu.i("JavaScript in Tail") / "jstail",
 
       // more complex because this menu allows anything in the
       // /static path to be visible
@@ -53,6 +54,7 @@ class Boot {
     LiftRules.jsArtifacts = JQueryArtifacts
     JQueryModule.InitParam.JQuery=JQueryModule.JQuery172
     JQueryModule.init()
+
 
   }
 }
