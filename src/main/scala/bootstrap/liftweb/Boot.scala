@@ -24,6 +24,8 @@ class Boot {
       Menu.i("Home") / "index", // the simple way to declare a menu
 
       Menu.i("Ajax Invoke") / "ajaxinvoke",
+      Menu.i("OnEvent") / "onevent",
+
       Menu.i("HTML Select") / "htmlselect",
       Menu.i("Html Select and Form") / "htmlselectform",
       Menu.i("JavaScript in Tail") / "jstail",
