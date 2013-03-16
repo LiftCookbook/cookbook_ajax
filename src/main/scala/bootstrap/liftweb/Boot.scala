@@ -31,6 +31,7 @@ class Boot {
       Menu.i("Html Select and Form") / "htmlselectform",
       Menu.i("Client-Side Action") / "clientside",
       Menu.i("Focus On Load") / "focusonload",
+      Menu.i("CSS Class on Ajax Form") / "formcss",
 
       Menu.i("JavaScript in Tail") / "jstail",
 
