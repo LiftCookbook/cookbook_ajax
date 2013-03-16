@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Client Side Only Action</title>
+</head>
+<body data-lift-content-id="main">
+<div id="main" data-lift="surround?with=default;at=content">
+
+
+  <div data-lift="ClientSide">
+    <button>Click Me to Fade this Button out</button>
+  </div>
+
+  <div data-lift="ClientSide.combined">
+    <button>Click Me for Alert and Redirect</button>
+  </div>
+
+  <div data-lift="ClientSide.callgreet">
+    <button>Click Me For Greeting</button>
+  </div>
+
+  <script type="text/javascript">
+    // <![CDATA[
+    function greet(who, times) {
+      for(i=0; i<times; i++)
+        alert("Hello "+who);
+    }
+    // ]]>
+  </script>
+
+</div>
+</body>
+</html>
+

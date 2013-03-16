@@ -29,6 +29,8 @@ class Boot {
       Menu.i("JsonCall") / "jsonCall",
       Menu.i("HTML Select") / "htmlselect",
       Menu.i("Html Select and Form") / "htmlselectform",
+      Menu.i("Client-Side Action") / "clientside",
+
       Menu.i("JavaScript in Tail") / "jstail",
 
       // more complex because this menu allows anything in the
