@@ -30,6 +30,7 @@ class Boot {
       Menu.i("HTML Select") / "htmlselect",
       Menu.i("Html Select and Form") / "htmlselectform",
       Menu.i("Client-Side Action") / "clientside",
+      Menu.i("Focus On Load") / "focusonload",
 
       Menu.i("JavaScript in Tail") / "jstail",
 
