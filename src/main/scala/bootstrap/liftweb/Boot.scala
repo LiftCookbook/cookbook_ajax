@@ -32,6 +32,8 @@ class Boot {
       Menu.i("Client-Side Action") / "clientside",
       Menu.i("Focus On Load") / "focusonload",
       Menu.i("CSS Class on Ajax Form") / "formcss",
+      Menu.i("Dynamic Template Load") / "templateload",
+
 
       Menu.i("JavaScript in Tail") / "jstail",
 
