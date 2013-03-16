@@ -26,7 +26,7 @@ class Boot {
       Menu.i("Ajax Invoke") / "ajaxinvoke",
       Menu.i("OnEvent") / "onevent",
       Menu.i("AjaxCall") / "ajaxCall",
-
+      Menu.i("JsonCall") / "jsonCall",
       Menu.i("HTML Select") / "htmlselect",
       Menu.i("Html Select and Form") / "htmlselectform",
       Menu.i("JavaScript in Tail") / "jstail",

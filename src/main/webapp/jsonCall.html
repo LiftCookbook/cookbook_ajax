@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>JSON Call Example</title>
+</head>
+<body data-lift-content-id="main">
+<div id="main" data-lift="surround?with=default;at=content">
+
+  <div data-lift="JsonCall">
+    <p>Enter an addition question:</p>
+    <div>
+      <input id="x"> + <input id="y"> = <input id="z">.
+    </div>
+    <button>Check</button>
+  </div>
+
+  <script type="text/javascript">
+  // <![CDATA[
+  function currentQuestion() {
+    return {
+      first:  parseInt($('#x').val()),
+      second: parseInt($('#y').val()),
+      answer: parseInt($('#z').val())
+    };
+  }
+  // ]]>
+  </script>
+
+</div>
+</body>
+</html>
+
