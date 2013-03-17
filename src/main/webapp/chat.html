@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Chat Example</title>
+</head>
+<body data-lift-content-id="main">
+<div id="main" data-lift="surround?with=default;at=content">
+
+  <form data-lift="form.ajax">
+    <input type="text" data-lift="ChatSnippet" id="message" placeholder="Type a message" />
+  </form>
+
+  <div data-lift="comet?type=ChatClient">
+    <ul>
+      <li>A message</li>
+    </ul>
+  </div>
+
+  <style data-lift="head">
+      /* <![CDATA[ */
+    input { font-size: large; }
+      /* ]]> */
+  </style>
+
+  <script type="text/javascript">
+    // <![CDATA[
+    function stash() {
+      saveCookie("stashed", $('#message').val());
+      location.reload();
+    }
+
+    jQuery(document).ready(function() {
+      var stashedValue = readCookie("stashed") || "";
+      $('#message').val(stashedValue);
+      deleteCookie("stashed");
+    });
+
+
+    // Thank you: http://stackoverflow.com/questions/11344531
+
+    function saveCookie(name, value) {
+      var cookie = [name, '=', JSON.stringify(value), '; path=/;'].join('');
+      document.cookie = cookie;
+    }
+
+    function readCookie(name) {
+      var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+      result && (result = JSON.parse(result[1]));
+      return result;
+    }
+
+    function deleteCookie(name) {
+      document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/;'].join('');
+    }
+
+    // ]]>
+  </script>
+
+
+</div>
+</body>
+</html>
+

@@ -9,6 +9,8 @@ import Loc._
 import net.liftmodules.JQueryModule
 import net.liftweb.http.js.jquery._
 
+import net.liftweb.http.js.JsCmds.Run
+
 
 /**
  * A class that's instantiated early and run.  It allows the application
@@ -33,9 +35,9 @@ class Boot {
       Menu.i("Focus On Load") / "focusonload",
       Menu.i("CSS Class on Ajax Form") / "formcss",
       Menu.i("Dynamic Template Load") / "templateload",
-
-
       Menu.i("JavaScript in Tail") / "jstail",
+      Menu.i("Chat with Comet Failure Detection") / "chat",
+
 
       // more complex because this menu allows anything in the
       // /static path to be visible
@@ -65,6 +67,9 @@ class Boot {
     LiftRules.jsArtifacts = JQueryArtifacts
     JQueryModule.InitParam.JQuery=JQueryModule.JQuery172
     JQueryModule.init()
+
+    // Customize Comet session failure detection:
+    LiftRules.noCometSessionCmd.default.set( () => Run("stash()") )
 
 
   }
