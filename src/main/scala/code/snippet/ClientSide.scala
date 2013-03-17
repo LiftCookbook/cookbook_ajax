@@ -6,7 +6,7 @@ import net.liftweb.http.js.JE
 
 object ClientSide {
 
-  def render = "button [onclick]" #> "$('button').fadeOut()"
+  def render = "button [onclick]" #> "$(this).fadeOut()"
 
   def combined =
     "button [onclick]" #> (Alert("Here we go...") & RedirectTo("http://liftweb.net"))

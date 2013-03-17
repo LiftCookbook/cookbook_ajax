@@ -10,13 +10,13 @@ import net.liftweb.json.DefaultFormats
 
 object JsonCall extends Loggable {
 
+  implicit val formats = DefaultFormats
+
+  case class Question(first: Int, second: Int, answer: Int) {
+    def valid_? = first + second == answer
+  }
+
   def render = {
-
-    implicit val formats = DefaultFormats
-
-    case class Question(first: Int, second: Int, answer: Int) {
-      def valid_? = first + second == answer
-    }
 
     def validate(value: JValue) : JsCmd = {
       logger.info(value)
@@ -29,7 +29,5 @@ object JsonCall extends Loggable {
 
     "button [onclick]" #>
       SHtml.jsonCall( JE.Call("currentQuestion"), validate _ )
-
   }
-
 }
