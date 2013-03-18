@@ -37,7 +37,7 @@ class Boot {
       Menu.i("Dynamic Template Load") / "templateload",
       Menu.i("JavaScript in Tail") / "jstail",
       Menu.i("Chat with Comet Failure Detection") / "chat",
-
+      Menu.i("Ajax File Upload") / "ajaxfileupload",
 
       // more complex because this menu allows anything in the
       // /static path to be visible
@@ -71,6 +71,16 @@ class Boot {
     // Customize Comet session failure detection:
     LiftRules.noCometSessionCmd.default.set( () => Run("stash()") )
 
+    /* To simulate file upload max size failure:
 
+      LiftRules.maxMimeFileSize = 100
+
+      // For this to work you need servlet API as a dependency in build.sbt (which it is for this project)
+      LiftRules.exceptionHandler.prepend {
+        case (_, _, x : FileUploadIOException) => ResponseWithReason(BadResponse(), "Unable to process file. Too large?")
+      }
+      */
+
+    LiftRules.dispatch.append(code.rest.AjaxFileUpload)
   }
 }
