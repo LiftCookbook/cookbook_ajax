@@ -38,6 +38,8 @@ class Boot {
       Menu.i("JavaScript in Tail") / "jstail",
       Menu.i("Chat with Comet Failure Detection") / "chat",
       Menu.i("Ajax File Upload") / "ajaxfileupload",
+      Menu.i("Wiring") / "wiring",
+
 
       // more complex because this menu allows anything in the
       // /static path to be visible
